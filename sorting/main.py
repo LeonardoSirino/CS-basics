@@ -39,7 +39,7 @@ def merge_sort(arr: List[int]) -> List[int]:
     return s_arr[::-1]
 
 
-def partition(arr: List[int], init: int, end: int) -> int:
+def _partition(arr: List[int], init: int, end: int) -> int:
     pivot = arr[end]
 
     pi = end
@@ -67,7 +67,7 @@ def quick_sort(arr: List[int], init: Optional[int] = None, end: Optional[int] = 
     if end <= init:
         return []
 
-    pi = partition(arr, init, end)
+    pi = _partition(arr, init, end)
 
     quick_sort(arr, init, pi-1)
     quick_sort(arr, pi+1, end)
